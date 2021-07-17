@@ -13,7 +13,8 @@ export default class App extends React.Component {
             movies: [],
                title:"",
                genre:"",
-               ImageUrl:""
+               ImageUrl:"",
+               movieLink:""
         }
     }
 
@@ -22,6 +23,7 @@ export default class App extends React.Component {
     componentDidMount() {
         axios.get('/movies').then((res) => {
             this.setState({ movies: res.data })
+            console.log(res.data)
         });
     }
 
@@ -43,17 +45,22 @@ export default class App extends React.Component {
     
 
     render() {
+
         return (
             <div>
+                
                 <div>
-                    <label>title :</label>
-                    <input type="text" name="title" onChange={this.handlechange.bind(this)} />
-                    <label>genre :</label>
-                    <input type="text" name="genre" onChange={this.handlechange.bind(this)} />
-                    <label>imageUrl :</label>
-                    <input type="text" name="imageUrl" onChange={this.handlechange.bind(this)} />
+                    <label>title : </label>
+                    <input type="text" name="title" placeholder="Enter title here ..." onChange={this.handlechange.bind(this)} />
+                    <label>genre : </label>
+                    <input type="text" name="genre" placeholder="Enter genre here ..." onChange={this.handlechange.bind(this)} />
+                    <label>imageUrl : </label>
+                    <input type="text" name="imageUrl" placeholder="Enter imageUrl here" onChange={this.handlechange.bind(this)} />
+                    <label>movieLink : </label>
+                    <input type="text" name="movieLink" placeholder="Enter movieLink here" onChange={this.handlechange.bind(this)} />
                     <button onClick={this.createPost.bind(this)}>Add movie</button>
                 </div>
+                
                 <Listmovies movies={this.state.movies} />
             </div>
         )
