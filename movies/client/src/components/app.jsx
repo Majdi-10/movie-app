@@ -49,14 +49,14 @@ export default class App extends React.Component {
         return (
             <div>
                 
-                <div>
-                    <label>title : </label>
+                <div class="topnav">
+                    <label></label>
                     <input type="text" name="title" placeholder="Enter title here ..." onChange={this.handlechange.bind(this)} />
-                    <label>genre : </label>
+                    <label></label>
                     <input type="text" name="genre" placeholder="Enter genre here ..." onChange={this.handlechange.bind(this)} />
-                    <label>imageUrl : </label>
+                    <label></label>
                     <input type="text" name="imageUrl" placeholder="Enter imageUrl here" onChange={this.handlechange.bind(this)} />
-                    <label>movieLink : </label>
+                    <label></label>
                     <input type="text" name="movieLink" placeholder="Enter movieLink here" onChange={this.handlechange.bind(this)} />
                     <button onClick={this.createPost.bind(this)}>Add movie</button>
                 </div>

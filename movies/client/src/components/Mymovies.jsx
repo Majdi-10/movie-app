@@ -81,9 +81,9 @@ class Mymovies extends React.Component {
                     <button onClick={() => { this.updateMovie(this.props.movie._id) }}>Edit</button>
                 </div>
                 <br />
-                <div>
-                    <img src={this.props.movie.imageUrl} />
-                    <div>
+                <div className="card">
+                    <img  src={this.props.movie.imageUrl} />
+                     <div>
                         <h2>{this.props.movie.title}</h2>
                         <h3>{this.props.movie.genre}</h3>
                         <a href={this.props.movie.movieLink}>watch here</a>
